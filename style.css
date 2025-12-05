@@ -1,0 +1,233 @@
+/* --- RESET & VARIABLES --- */
+:root {
+    --bg-color: #FDFBF7;      /* Page Background */
+    --card-bg: #FFFFFF;       /* Main Card White */
+    --item-bg: #FFFDF5;       /* Cream Item Background */
+    --text-primary: #3E2723;  /* Dark Brown */
+    --text-secondary: #6D4C41; /* Lighter Brown */
+    --accent-gold: #F3C04F;   /* The Yellow/Gold used in image */
+    --border-gold: #F3D586;   /* Lighter gold for borders */
+    
+    --font-heading: 'Merriweather', serif;
+    --font-body: 'Lora', serif;
+    
+    --shadow-soft: 0 4px 20px rgba(62, 39, 35, 0.05);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    padding: 40px;
+}
+
+/* --- HEADERS --- */
+.main-header { text-align: center; margin-bottom: 50px; color: #7e380f; }
+.main-header h1 { font-size: 2.5rem; color: #7e380f; margin-bottom: 5px;  }
+.subtitle { color: var(--accent-gold); font-style: italic; }
+
+/* --- NAVIGATION --- */
+.nav-container { max-width: 1100px; margin: 0 auto; }
+.nav-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; font-family: 'Lora', serif; font-size: 18px;font-weight: bolder;}
+.nav-card {
+    background: white; padding: 30px; border-radius: 12px; text-align: center;
+    box-shadow: var(--shadow-soft); cursor: pointer; transition: transform 0.3s;
+}
+.nav-card p { color: rgba(215, 118, 3, 1); font-size: 10px; font-family: 'Merriweather', serif; display: none;}
+.nav-card:hover { transform: translateY(-5px); }
+.nav-card i { font-size: 2.5rem; color: var(--accent-gold); display: block; margin-bottom: 10px; }
+
+/* --- SECTION STYLES --- */
+.hidden { display: none; }
+.content-section { max-width: 1200px; margin: 0 auto; animation: fadeIn 0.5s ease; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- ATTRIBUTES & SKILLS LAYOUT --- */
+.attributes-header-row {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 30px; border-bottom: none;
+}
+.header-text h2 { font-size: 2.5rem; color: var(--text-primary); margin-bottom: 5px; }
+.header-text p { color: var(--text-secondary); font-size: 1rem; }
+
+.btn-back-floating {
+    background: #F9F1D8; border: none; padding: 10px 20px;
+    border-radius: 6px; color: var(--text-primary); cursor: pointer;
+    font-family: var(--font-heading); font-weight: bold;
+}
+.btn-back-floating:hover { background: var(--accent-gold); color: white; }
+
+.split-layout {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+}
+
+/* WHITE COLUMN CARDS */
+.column-card {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04); /* Soft shadow like image */
+    height: fit-content;
+}
+
+.column-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 25px;
+}
+.column-header h3 {
+    font-size: 1.6rem; font-family: var(--font-heading); color: var(--text-primary);
+}
+.icon-btn {
+    background: #F9F1D8; border: none; width: 32px; height: 32px;
+    border-radius: 6px; cursor: pointer; color: var(--text-primary); font-size: 1.2rem;
+}
+
+/* --- LEFT: ACCORDION ITEMS --- */
+.accordion-item {
+    background-color: var(--item-bg);
+    border: 1px solid var(--border-gold); /* The thin gold border */
+    border-radius: 8px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.accordion-header {
+    padding: 20px; cursor: pointer;
+}
+.accordion-header h4 {
+    font-size: 1.1rem; color: #5D4037; margin-bottom: 8px; font-weight: 700;
+}
+.accordion-status {
+    font-size: 0.8rem; color: #BCAAA4; font-weight: 600;
+    display: flex; align-items: center; gap: 5px;
+}
+.accordion-status i { font-size: 0.7rem; } /* Arrow size */
+
+/* EXPANDED STATE */
+.accordion-body {
+    max-height: 0;
+    opacity: 0;
+    overflow-y: auto; /* SCROLLBAR ENABLED */
+    transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
+    padding: 0 20px;
+    
+    /* Custom Scrollbar Styling */
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-gold) transparent;
+}
+
+/* Webkit Scrollbar (Chrome/Safari) */
+.accordion-body::-webkit-scrollbar { width: 6px; }
+.accordion-body::-webkit-scrollbar-track { background: transparent; }
+.accordion-body::-webkit-scrollbar-thumb { background-color: var(--border-gold); border-radius: 20px; }
+
+.accordion-item.active .accordion-body {
+    max-height: 150px; /* Fixed height to force scroll if text is long */
+    opacity: 1;
+    padding-bottom: 20px;
+}
+
+/* --- RIGHT: SKILL ITEMS --- */
+.skill-item-row {
+    background-color: var(--item-bg);
+    border-left: 5px solid var(--accent-gold); /* The thick gold bar */
+    padding: 18px 20px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 1rem;
+    display: flex; align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+/* --- UTILS --- */
+.btn-back { background:none; border:none; color: var(--text-secondary); cursor: pointer; margin-bottom: 20px; }
+
+@media (max-width: 768px) {
+    .split-layout { grid-template-columns: 1fr; }
+    body { padding: 15px; }
+}
+
+
+
+/* --- TREE CSS --- */
+.tree-wrapper {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-soft);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.tree-root, .nested {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.nested {
+    display: none; /* Hidden by default */
+    margin-left: 10px;
+    border-left: 1px dashed var(--accent-gold); /* The connector line */
+}
+
+.nested.active {
+    display: block;
+    animation: slideDown 0.3s ease;
+}
+
+.tree-node {
+    cursor: pointer;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+    color: var(--text-secondary);
+}
+
+.tree-node:hover {
+    color: var(--accent-gold);
+    background-color: #FFFDF5;
+    border-radius: 6px;
+}
+
+.tree-node i {
+    transition: transform 0.3s;
+    font-size: 0.9rem;
+}
+
+.tree-node.open i {
+    transform: rotate(90deg);
+    color: var(--accent-gold);
+}
+
+/* The Final Node (Prophet) */
+.prophet-node {
+    color: var(--text-primary);
+    font-weight: bold;
+    background: #F9F1D8; /* Gold background highlight */
+    border: 1px solid var(--accent-gold);
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 10px;
+    box-shadow: 0 4px 10px rgba(243, 192, 79, 0.2);
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.attribute-card{
+    width: 280px ;
+}

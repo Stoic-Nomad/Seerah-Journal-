@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seerah of Prophet Muhammad (ﷺ)</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <h1>Seerah of Prophet Muhammad (ﷺ)</h1>
+        <p class="subtitle">An Academic Journey</p>
+    </header>
+
+    <nav id="nav-panel" class="nav-container">
+        <div class="nav-grid">
+            <div class="nav-card" onclick="openSection('section-tree')">
+                <i class="ph ph-tree-structure"></i>
+                <h3>Qurayshi Clan Tree</h3>
+                <p>Lineage to the Prophet</p>
+            </div>
+            <div class="nav-card" onclick="openSection('section-maps')">
+                <i >🗺️</i>
+                <h3>Arab Maps </h3>
+                <p>Historical Regions</p>
+            </div>
+            <div class="nav-card" onclick="openSection('section-attributes')">
+                <i class="ph ph-user-circle"></i>
+            
+                <h3>Attributes & Skills</h3>
+                <p>Character Traits</p>
+            </div>
+            <div class="nav-card" onclick="openSection('section-philosophy')">
+                <i class="ph ph-brain"></i>
+                <h3>Core Philosophy</h3>
+                <p>Study Notes</p>
+            </div>
+            <div class="nav-card" onclick="openSection('section-war')">
+                <i class="ph ph-scroll"></i>
+                <h3> Intellectual War Insights</h3>
+                <p>Strategic Analysis</p>
+            </div>
+        </div>
+    </nav>
+
+    <main id="content-container">
+
+        <section id="section-attributes" class="content-section hidden">
+            
+            <div class="attributes-header-row">
+                <div class="header-text">
+                    <h2>Attributes & Skills</h2>
+                    <p>Character traits and capabilities of Prophet Muhammad (ﷺ)</p>
+                </div>
+                <button class="btn-back-floating" onclick="closeSection()">Back to Navigation</button>
+            </div>
+            
+            <div class="split-layout">
+                
+                <div class="column-card">
+                    <div class="column-header">
+                        <h3>Core Attributes</h3>
+                        <button class="icon-btn">+</button>
+                    </div>
+                    <div id="attributes-accordion" class="accordion-wrapper">
+                        </div>
+                </div>
+
+                <div class="column-card">
+                    <div class="column-header">
+                        <h3>Practical Skills</h3>
+                        <button class="icon-btn">+</button>
+                    </div>
+                    <div id="skills-list" class="skills-wrapper">
+                        </div>
+                </div>
+
+            </div>
+        </section>
+
+       <section id="section-tree" class="content-section hidden">
+    <button class="btn-back-floating" onclick="closeSection()">Back to Navigation</button>
+    
+    <div class="section-header" style="margin-top: 20px;">
+        <h2>Genealogical Lineage</h2>
+        <p>Direct patrilineal descent from Fihr ibn Malik (Quraysh) to Muhammad (ﷺ)</p>
+    </div>
+    
+    <div class="tree-wrapper">
+        <ul class="tree-root">
+            <li>
+                <div class="tree-node" onclick="toggleNode(this)">
+                    <i class="ph ph-caret-right"></i> <strong>Fihr ibn Malik (Quraysh)</strong>
+                </div>
+                <ul class="nested">
+                    <li>
+                        <div class="tree-node" onclick="toggleNode(this)">
+                            <i class="ph ph-caret-right"></i> Ghalib
+                        </div>
+                        <ul class="nested">
+                            <li>
+                                <div class="tree-node" onclick="toggleNode(this)">
+                                    <i class="ph ph-caret-right"></i> Lu’ayy
+                                </div>
+                                <ul class="nested">
+                                    <li>
+                                        <div class="tree-node" onclick="toggleNode(this)">
+                                            <i class="ph ph-caret-right"></i> Ka'b
+                                        </div>
+                                        <ul class="nested">
+                                            <li>
+                                                <div class="tree-node" onclick="toggleNode(this)">
+                                                    <i class="ph ph-caret-right"></i> Murrah
+                                                </div>
+                                                <ul class="nested">
+                                                    <li>
+                                                        <div class="tree-node" onclick="toggleNode(this)">
+                                                            <i class="ph ph-caret-right"></i> Kilab
+                                                        </div>
+                                                        <ul class="nested">
+                                                            <li>
+                                                                <div class="tree-node" onclick="toggleNode(this)">
+                                                                    <i class="ph ph-caret-right"></i> Qusayy
+                                                                </div>
+                                                                <ul class="nested">
+                                                                    <li>
+                                                                        <div class="tree-node" onclick="toggleNode(this)">
+                                                                            <i class="ph ph-caret-right"></i> Abd Manaf
+                                                                        </div>
+                                                                        <ul class="nested">
+                                                                            <li>
+                                                                                <div class="tree-node" onclick="toggleNode(this)">
+                                                                                    <i class="ph ph-caret-right"></i> Hashim
+                                                                                </div>
+                                                                                <ul class="nested">
+                                                                                    <li>
+                                                                                        <div class="tree-node" onclick="toggleNode(this)">
+                                                                                            <i class="ph ph-caret-right"></i> Abdul Muttalib
+                                                                                        </div>
+                                                                                        <ul class="nested">
+                                                                                            <li>
+                                                                                                <div class="tree-node" onclick="toggleNode(this)">
+                                                                                                    <i class="ph ph-caret-right"></i> Abdullah
+                                                                                                </div>
+                                                                                                <ul class="nested">
+                                                                                                    <li class="final-node">
+                                                                                                        <div class="tree-node prophet-node">
+                                                                                                            <i class="ph ph-star-four-fill"></i> 
+                                                                                                            <strong>Prophet Muhammad (ﷺ)</strong>
+                                                                                                        </div>
+                                                                                                    </li>
+                                                                                                </ul>
+                                                                                            </li>
+                                                                                        </ul>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</section>
+
+        </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
